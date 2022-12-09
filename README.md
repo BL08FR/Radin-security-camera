@@ -8,6 +8,7 @@ Security camera based on ESP32cam with modified sketch to set low framerate in o
  - Relay can be used to switch on projector (normal light or IR for nightvision).
   
  /!\ Check well all settings in myconfig.h tab!
+ 
  /!\ Don't use relay if you are using SD card!
 
 You can use in pair with That project android app:
