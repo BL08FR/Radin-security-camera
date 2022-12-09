@@ -14,3 +14,5 @@ Security camera based on ESP32cam with modified sketch to set low framerate in o
 You can use in pair with That project android app:
 https://youtu.be/S6Y_n-Axtmk
 https://play.google.com/store/apps/details?id=com.thatproject.esp32camviewer.android
+
+![alt text](https://github.com/BL08FR/Radin-security-camera/blob/main/fpsrelay.jpg?raw=true)
