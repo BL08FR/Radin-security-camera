@@ -12,7 +12,13 @@ Security camera based on ESP32cam with modified sketch to set low framerate in o
  /!\ Check well all settings in myconfig.h tab!
  
  /!\ Don't use relay if you are using SD card!
+ 
+ /!\Pay attention to power supply before to accuse the code (what I did), 5V 1A phone charger is NOT enough, you may loose the stream time to time, use 2A.
 
 You can use in pair with That project android app:
 https://youtu.be/S6Y_n-Axtmk
 https://play.google.com/store/apps/details?id=com.thatproject.esp32camviewer.android
+
+
+Updates:
+[15/12/22] Default FPS set to 1, webpage start in full controls mode. 
