@@ -310,7 +310,7 @@ void lightvalue(){
       s->set_reg(s,0xff,0xff,0x01);//banksel    
       autoLightAfterActivation = s->get_reg(s,0x2f,0xff);
     }
-    if(light > day_switch_value && light > autoLightActivation + 10){
+    if(light > day_switch_value && light > autoLightAfterActivation + 10){
       Serial.println("Auto-Relay OFF!");
       if(RELAYPOLARITY == 1){digitalWrite(RELAYPIN, LOW);}//set relay pin as output and +3.3v to enable
       if(RELAYPOLARITY == 0){pinMode(RELAYPIN, OUTPUT);}//set relay pin as input (to GND) to enable
