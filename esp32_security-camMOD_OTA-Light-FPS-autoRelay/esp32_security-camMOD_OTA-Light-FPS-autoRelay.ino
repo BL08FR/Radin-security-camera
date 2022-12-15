@@ -180,6 +180,7 @@ bool autoLamp = false;         // Automatic lamp (auto on while camera running)
 int maxFPS = constrain(MAXFPS_DEFAULT,1,30); // initialize maxFPS, range 1-30
 int relay = false;//relay disabled
 int day_switch_value = DAYSWITCHVALUE;//light limit for autorelay
+int autoLightAfterActivation;
 
 int lampChannel = 7;           // a free PWM channel (some channels used by camera)
 const int pwmfreq = 50000;     // 50K pwm frequency
@@ -304,8 +305,12 @@ void lightvalue(){
       Serial.println("Auto-Relay ON!");
       if(RELAYPOLARITY == 1){digitalWrite(RELAYPIN, HIGH);}//set relay pin as output and +3.3v to enable
       if(RELAYPOLARITY == 0){pinMode(RELAYPIN, INPUT_PULLUP);}//set relay pin as input (to GND) to enable
+      delay(50);
+      sensor_t * s = esp_camera_sensor_get();
+      s->set_reg(s,0xff,0xff,0x01);//banksel    
+      autoLightAfterActivation = s->get_reg(s,0x2f,0xff);
     }
-    if(light > day_switch_value){
+    if(light > day_switch_value && light > autoLightActivation + 10){
       Serial.println("Auto-Relay OFF!");
       if(RELAYPOLARITY == 1){digitalWrite(RELAYPIN, LOW);}//set relay pin as output and +3.3v to enable
       if(RELAYPOLARITY == 0){pinMode(RELAYPIN, OUTPUT);}//set relay pin as input (to GND) to enable
