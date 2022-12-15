@@ -21,4 +21,4 @@ https://play.google.com/store/apps/details?id=com.thatproject.esp32camviewer.and
 
 
 Updates:
-[15/12/22] Default FPS set to 1, webpage start in full controls mode. 
+[15/12/22] Default FPS set to 1, webpage start in full controls mode, autorelay function update (light to low -> switch ON projector via relay -> get the new light value with relay ON -> if light become high than threshold AND +10 from the "new light value" -> switch OFF projector via relay). 
