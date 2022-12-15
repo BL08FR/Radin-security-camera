@@ -147,7 +147,7 @@ struct station stationList[] = {{"YOUR_WIFI_NETWORK_NAME","WIFI PASSWORD", true}
 // #define CAM_ROTATION 0
 
 //DEFAULT FRAMERATE LIMIT
-#define MAXFPS_DEFAULT 25
+#define MAXFPS_DEFAULT 1
 
 // DELAY TO RESTART
 #define AUTOREBOOT 0 //set to 1 to automatically reboot the board
@@ -164,7 +164,7 @@ long lightcheckdelay = 30000;// delay between each ambient light check (to don't
  *
  */
 // Default Page: uncomment to make the full control page the default, otherwise show simple viewer
-// #define DEFAULT_INDEX_FULL
+#define DEFAULT_INDEX_FULL
 
 // Uncomment to disable the notification LED on the module
 // #define LED_DISABLE
