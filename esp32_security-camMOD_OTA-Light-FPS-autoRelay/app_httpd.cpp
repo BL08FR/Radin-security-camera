@@ -258,9 +258,13 @@ static esp_err_t stream_handler(httpd_req_t *req){
 
     bool firstcheck = 1;//set this is first while loop
     unsigned long lastlightcheck;//when last light value was taken
+    int nextframe;
     
     while(true){
-      if(millis()>(lastStreamFrame+1000/maxFPS)){
+      if(maxFPS == 1){nextframe = 800/maxFPS;}// set 1.25fps (minimum stable value tested
+      if(maxFPS != 1){nextframe = 1000/maxFPS;}
+            
+      if(millis()>lastStreamFrame+nextframe){
         fb = esp_camera_fb_get();
         if (!fb) {
             Serial.println("STREAM: failed to acquire frame");
