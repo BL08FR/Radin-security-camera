@@ -25,4 +25,6 @@ Updates:
 [15/12/22] Default FPS set to 1, webpage start in full controls mode.
 Autorelay function update:
 If ambient light level is lower than threshold -> switch ON projector via relay -> get the "new light value" with relay ON.
-If ambient light become higher than threshold AND +10 from the "new light value" -> switch OFF projector via relay. 
+If ambient light become higher than threshold AND +10 from the "new light value" -> switch OFF projector via relay.
+
+[16/12/22] 1 FPS didn't provide a stable stream on long term use, modified to 1.25 real FPS when set to 1 (value tested stable during 24hours).
